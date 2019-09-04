@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  #labels:
+  #  run: anything
+  name: curl
+spec:
+  containers:
+  - image: tutum/curl
+    name: main
+    resources: {}
+    command: ["sleep", "9999999"]

@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata: 
+  name: kubia
+spec: 
+  tls: 
+  - hosts: 
+    - lazylife.tek
+    secretName: tls-secret
+  rules: 
+  - host: lazylife.tek
+    http: 
+      paths: 
+      - path: / 
+        backend: 
+          serviceName: kubia-nodeport
+          servicePort: 80
+      - path: /foo
+        backend: 
+          serviceName: bar 
+          servicePort: 80 
+      - path: /kubia 
+        backend: 
+          serviceName: kubia
+          servicePort: 80
+
